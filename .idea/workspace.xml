@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="void_lib" targetName="doc" />
+      <config projectName="void_lib" targetName="disassemble_void_mcu_example" />
+      <config projectName="void_lib" targetName="void_mcu_example" />
+      <config projectName="void_lib" targetName="tests" />
+      <config projectName="void_lib" targetName="unity" />
+      <config projectName="void_lib" targetName="void-atmega168p" />
+      <config projectName="void_lib" targetName="void_mcu_example.elf" />
+      <config projectName="void_lib" targetName="void-win32" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug-AVR" CONFIG_NAME="Debug" TOOLCHAIN_NAME="AVR" GENERATION_OPTIONS="-DCMAKE_TOOLCHAIN_FILE:FILEPATH=I:/YandexDisk/lib/void/cmake/avr/entrypoint.cmake -DTOOLCHAIN_PATH:STRING=I:/Nextcloud/LIBRARIES/WinAVR/ -DMCU:STRING=atmega168p -DF_CPU:STRING=16000000UL -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_RUNTIME_OUTPUT_DIRECTORY:STRING=I:/YandexDisk/lib/void/bin/debug -DVOID_LIB_PATH:STRING=I:/YandexDisk/lib/void -G Ninja" GENERATION_DIR="build-debug" />
+      <configuration PROFILE_NAME="Release-AVR" CONFIG_NAME="Release" TOOLCHAIN_NAME="AVR" GENERATION_OPTIONS="-DCMAKE_TOOLCHAIN_FILE:FILEPATH=I:/YandexDisk/lib/void/cmake\avr\entrypoint.cmake -DTOOLCHAIN_PATH:STRING=I:/Nextcloud/LIBRARIES/WinAVR/ -DMCU:STRING=atmega168p -DF_CPU:STRING=16000000UL -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_RUNTIME_OUTPUT_DIRECTORY:STRING=I:/YandexDisk/lib/void/bin/release -DVOID_LIB_PATH:STRING=I:/YandexDisk/lib/void/ -G Ninja" GENERATION_DIR="build-release" />
+      <configuration PROFILE_NAME="Debug-MinGW" CONFIG_NAME="Debug" TOOLCHAIN_NAME="MinGW" GENERATION_OPTIONS="-DCMAKE_TOOLCHAIN_FILE:FILEPATH=I:/YandexDisk/lib/void/cmake/win32/entrypoint.cmake -DTOOLCHAIN_PREFIX:STRING=I:/Nextcloud/LIBRARIES/Arm/minGW/mingw64 -DVOID_LIB_PATH:STRING=I:/YandexDisk/lib/void -DUNITY_LIB_PATH:STRING=I:/Nextcloud/LIBRARIES/cpp/lib/" GENERATION_DIR="build-tests" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d05eb52a-86e9-423f-b3c7-9cb9ba7e8970" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-MinGW" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="void_cph" />
+                    <option name="lastUsedInstant" value="1608353450" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1608353449" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="d9e9hdio" />
+  </component>
+  <component name="ProjectId" id="1lpbEHxdZOm9In9VET2cpZJYeFa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cmake/win32" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Nextcloud\LIBRARIES\examples\templates\void_lib\cmake\win32" />
+      <recent name="I:\Nextcloud\LIBRARIES\examples\templates\void_lib\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\Nextcloud\LIBRARIES\examples\templates\void_lib\cmake\common" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.tests">
+    <configuration name="disassemble_void_mcu_example" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="void_lib" TARGET_NAME="disassemble_void_mcu_example" CONFIG_NAME="Debug-AVR">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="doc" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="void_lib" TARGET_NAME="doc" CONFIG_NAME="Debug-MinGW">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unity" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="void_lib" TARGET_NAME="unity" CONFIG_NAME="Debug-MinGW">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="void-atmega168p" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="void_lib" TARGET_NAME="void-atmega168p" CONFIG_NAME="Debug-AVR">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="void-win32" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="void_lib" TARGET_NAME="void-win32" CONFIG_NAME="Debug-MinGW">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="void_mcu_example.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="void_lib" TARGET_NAME="void_mcu_example.elf" CONFIG_NAME="Debug-AVR" RUN_TARGET_PROJECT_NAME="void_lib" RUN_TARGET_NAME="void_mcu_example.elf">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.disassemble_void_mcu_example" />
+      <item itemvalue="CMake Application.void-atmega168p" />
+      <item itemvalue="CMake Application.void_mcu_example" />
+      <item itemvalue="CMake Application.void_mcu_example.elf" />
+      <item itemvalue="CMake Application.doc" />
+      <item itemvalue="CMake Application.tests" />
+      <item itemvalue="CMake Application.unity" />
+      <item itemvalue="CMake Application.void-win32" />
+    </list>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d05eb52a-86e9-423f-b3c7-9cb9ba7e8970" name="Default Changelist" comment="" />
+      <created>1608296866159</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608296866159</updated>
+      <workItem from="1608296867830" duration="3788000" />
+      <workItem from="1608362895106" duration="26000" />
+      <workItem from="1608363701767" duration="9000" />
+      <workItem from="1608570083136" duration="18012000" />
+      <workItem from="1608640341355" duration="2637000" />
+      <workItem from="1608645743880" duration="657000" />
+      <workItem from="1608646538180" duration="15578000" />
+      <workItem from="1608788920917" duration="20000" />
+      <workItem from="1608803660459" duration="373000" />
+      <workItem from="1608804075541" duration="413000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608804393315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608804393315" />
+    <state x="723" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608706584062">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="723" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608706584062" />
+    <state x="669" y="231" key="#doc" timestamp="1608706779557">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="231" key="#doc/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608706779557" />
+    <state width="384" height="466" key="DebuggerActiveHint" timestamp="1608614837189">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="384" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608614837189" />
+    <state x="484" y="69" width="726" height="702" key="EnvironmentVariablesDialog" timestamp="1608803767312">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="484" y="69" width="726" height="702" key="EnvironmentVariablesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608803767312" />
+    <state x="677" y="290" key="FileChooserDialogImpl" timestamp="1608362918386">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="290" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608362918386" />
+    <state x="2597" y="290" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608296989844" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608804488305">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608804488305" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608804488305">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608804488305" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608804488305">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608804488305" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608804488305">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608804488305" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608640321911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608640321911" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1608640321910">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608640321910" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1608640321910">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608640321910" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1608640321911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608640321911" />
+    <state x="-42" y="87" width="1920" height="708" key="SettingsEditor" timestamp="1608804484742">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-42" y="87" width="1920" height="708" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608804484742" />
+    <state x="2318" y="180" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608296997404" />
+    <state x="1031" y="0" width="1392" height="717" key="dock-window-1" timestamp="1608576158841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1031" y="0" width="1392" height="717" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608576158841" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608804298826">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608804298826" />
+  </component>
+</project>
