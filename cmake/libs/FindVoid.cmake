@@ -5,21 +5,25 @@ if (NOT EXISTS ${VOID_LIB_PATH})
 	message(FATAL_ERROR "CMake error: Directory VOID_LIB_PATH for void library not specified: ${VOID_LIB_PATH}")
 endif()
 STRING(REGEX REPLACE "\\\\" "/" VOID_LIB_PATH ${VOID_LIB_PATH}) 
-#ARGS: 	${MCU} or "win32" - for stm32/avr/stm8
+#ARGS: 	MCU ${MCU} or "win32" - for stm32/avr/stm8
 #		ENABLE_SAFE_INTEGERS - enable boost/safe_integers (for win32 project only)
 #Global:
 #	SYSTEM_PROCESSOR stm32/avr/stm8
 #	VOID_LIB_PATH: path to lib
 #depends from ${CHIP_HEADER_${MCU}} for avr
 #out = void-${MCU}
-function(configure_void_library MCU ENABLE_SAFE_INTEGERS)
+function(configure_void_library)
+	set(noValues ENABLE_SAFE_INTEGERS)
+	set(singleValues MCU)
+	include(CMakeParseArguments)
+	cmake_parse_arguments(ARG "${noValues}" "${singleValues}" "" ${ARGN})
 	list(APPEND CMAKE_MESSAGE_CONTEXT "void")
-	set(new_target void-${MCU})
+	set(new_target void-${ARG_MCU})
 	add_library(${new_target} ${VOID_LIB_PATH}/void/src/time/dateutils.cpp)
 	target_compile_features(${new_target} PRIVATE cxx_std_17)
 
 	if (SYSTEM_PROCESSOR STREQUAL stm32) 
-		STM32_CHIP_GET_ARCH(${MCU} MCU_TYPE) 
+		STM32_CHIP_GET_ARCH(${ARG_MCU} MCU_TYPE)
 		LIST(APPEND DEFINES _ARM)
 		LIST(APPEND DEFINES __CORTEX_${MCU_TYPE}__)
 	elseif(SYSTEM_PROCESSOR STREQUAL avr)
@@ -28,7 +32,7 @@ function(configure_void_library MCU ENABLE_SAFE_INTEGERS)
 	elseif(SYSTEM_PROCESSOR STREQUAL stm8)
 		LIST(APPEND DEFINES _STM8)
 	endif()
-	if (ENABLE_SAFE_INTEGERS AND MCU STREQUAL win32)
+	if (ARG_ENABLE_SAFE_INTEGERS AND ARG_MCU STREQUAL win32)
 		LIST(APPEND DEFINES _VOID_SAFE_INTEGERS)
 	endif()
 	target_compile_definitions(${new_target}  PUBLIC ${DEFINES})
