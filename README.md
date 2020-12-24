@@ -1,6 +1,6 @@
 # Void library
 
-Micro framework abstraction of type system from platform for MCU like `AVR`, `STM8`, `STM32`.
+Micro library for abstraction of type system from platform for MCU like `AVR`, `STM8`, `STM32`.
 
 # Quick Start
 

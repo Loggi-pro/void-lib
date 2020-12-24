@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>void_lib: Main Page</title>
+<title>void_lib: Void library</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,11 +68,196 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">void_lib Documentation</div>  </div>
+<div class="title">Void library </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p>(Click to expand):Micro library for abstraction of type system from platform for MCU like <code>AVR</code>, <code>STM8</code>, <code>STM32</code>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Quick Start</h1>
+<ol type="1">
+<li>Add **&lt;<a class="el" href="platform__specific_8h_source.html">void/platform_specific.h</a>&gt;** to every file in project. (You can use force include of c<code></code>++ compiler)</li>
+<li>Select platform by defining one of the macros (global define to all project): <code>_AVR</code>,<code>_STM8</code>,<code>_ARM</code>, <code>WIN32</code>.</li>
+<li>(Optional) Predefine <code>_UNITY</code> for TEST project based on Unity framework.</li>
+<li>(Optional) Enable <em>Safe numeric</em> feature for PC project.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<ul>
+<li><b>Safe Numerics</b>: integer range checking. Detection of integer overflows, outranges and invalid math evaluations (on different CPU architectures) (&lt;boost/safe_numerics&gt; integration).</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md4"></a>
+Types</h1>
+<ul>
+<li><em>Header</em>: <b><a class="el" href="platform__specific_8h_source.html">void/platform_specific.h</a></b></li>
+<li><em>Description</em>:<ol type="1">
+<li>Alias to standart types, unsigned: <code>u08, u16, u32, u64</code>, signed: <code>s08, s16, s32, s64</code>.</li>
+<li>Null pointer type <code>nullptr</code>.</li>
+<li>Byte and word getters from variable: <code>vd::lowByte(byte)</code>, <code>vd::hiByte(byte)</code>, <code>vd::lowWord(word)</code>, <code>vd::hiWord(word)</code>.</li>
+<li><code>PACK()</code> macro for platform-independent packed structs: <code>PACK(struct foo {char a; });</code></li>
+<li>Types with different order of bytes (and auto conversion between them and common types). 4.1. Little endian types guaranteed, unsigned: <code>u08le, u16le, u32le, u64le</code>, signed: <code>s08le, s16le, s32le, s64le</code>. 4.2. Big endian types guaranteed, unsigned: <code>u08be, u16be, u32be, u64be</code>, signed: <code>s08be, s16be, s32be, s64ble</code>. 4.3. Converter template functions: <code>T vd::toLittleEndian&lt;T&gt;(T val)</code>, <code>T vd::toBigEndian&lt;T&gt;(T val)</code>, <code>T vd::fromLittleEndian&lt;T&gt;(T val)</code>, <code>T vd::fromBigEndian&lt;T&gt;(T val)</code>.</li>
+<li>Size of array function: <code>countOf(arr)</code> (c++11) or <code><a class="el" href="group__utilities.html#ga92da8d5def19f69cc203ed7f98b1ba70" title="Count element count in array.">COUNT_OF(arr)</a></code> (macro).</li>
+</ol>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+GSL Types</h1>
+<ul>
+<li><em>Header</em>: <b><a class="el" href="gsl_8h_source.html">void/gsl.h</a></b></li>
+<li><em>Description</em>:<ol type="1">
+<li><code>vd::gsl::span&lt;T&gt;</code> A view of contiguous T's, replace for (*,length) in function argument.</li>
+<li><code>vd::gsl::not_null&lt;&gt;</code> wrap any pointer, auto assert for nullptr.</li>
+</ol>
+</li>
+<li><em>Example</em>: &lt;details&gt;</li>
+</ul>
+<div class="fragment"><div class="line">{c++}</div>
+<div class="line">   int summ(const vd::gsl::span&lt;int&gt; a) { //same as (int* a, int a_length)</div>
+<div class="line">       int res = 0;</div>
+<div class="line">       for (int i = 0; i&lt;a.size();++i){</div>
+<div class="line">           res+=a.data()[i];</div>
+<div class="line">       }</div>
+<div class="line">       return res;</div>
+<div class="line">   }</div>
+<div class="line">   //using</div>
+<div class="line">   int a[] = { 1, 2, 3 };</div>
+<div class="line">   int res = summ(a);</div>
+</div><!-- fragment --><div class="fragment"><div class="line">{c++}</div>
+<div class="line">   int* use_not_null(vd::gsl::not_null&lt;int*&gt; p) { //assert here if p==nullptr</div>
+<div class="line">       // use p knowing it&#39;s not nullptr, NULL or 0.</div>
+<div class="line">       return p;</div>
+<div class="line">   }</div>
+<div class="line">   //using</div>
+<div class="line">   int a = 5;</div>
+<div class="line">   int* b = &amp;a;</div>
+<div class="line">   use_not_null(b);</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Time types</h1>
+<ul>
+<li><em>Header</em>: <b><a class="el" href="chrono_8h_source.html">void/chrono.h</a></b></li>
+<li><em>Description</em>:<ol type="1">
+<li>Time types for different durations: <code>vd::hours(x)</code>, <code>vd::minutes(x)</code>, <code>vd::seconds(x)</code>, <code>vd::milli(x)</code>, <code>vd::micro(x)</code>.</li>
+<li>Auto convert any time type to other type in math operations: <code>vd::hours(1)+vd::minutes(10) == vd::minutes(70)</code>.</li>
+<li>Literal time types for using in compile time expressions: <br  />
+ <code>vd::hours_l&lt;x&gt; vd::minutes_l&lt;x&gt;</code>, <code>vd::seconds_l&lt;x&gt;</code>, <code>vd::milli_l&lt;x&gt;</code>, <code>vd::micro_l&lt;x&gt;</code>.</li>
+</ol>
+</li>
+<li><em>Warning</em>: On use math operations with different time types, bigger time type will be trunked and call <em>ASSERTION</em> (in debug mode):</li>
+</ul>
+<div class="fragment"><div class="line">{c++}</div>
+<div class="line">   //WARNING Never do like this</div>
+<div class="line">   vd::seconds s(5);</div>
+<div class="line">   vd::milli m(500);</div>
+<div class="line">   s += m; //assert here</div>
+<div class="line">   s += m; //assert here</div>
+<div class="line">   //s == 5</div>
+</div><!-- fragment --><ul>
+<li><em>Example</em>: &lt;details&gt;</li>
+</ul>
+<p>(Click to expand): </p>
+<div class="fragment"><div class="line">{c++}</div>
+<div class="line">   //Run-time example</div>
+<div class="line">   vd::seconds s(5);</div>
+<div class="line">   vd::milli m(1000);</div>
+<div class="line">   vd::micro us(1000000);</div>
+<div class="line">   s += m;</div>
+<div class="line">   s += us;</div>
+<div class="line">   if (s.count() == 7) {</div>
+<div class="line">       ...</div>
+<div class="line">   }</div>
+</div><!-- fragment --><div class="fragment"><div class="line">{c++}</div>
+<div class="line">   //Compile-time example</div>
+<div class="line">   enum {</div>
+<div class="line">       TIME = vd::seconds_l&lt;5&gt;::static_value+vd::milli_l&lt;1000&gt;::static_value; // Equals to 6</div>
+<div class="line">   }</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<ul>
+<li><em>Comment</em>:<ol type="1">
+<li>Run-time types have <code>.count()</code> method which returns time value (in corresponding units).</li>
+<li>Compile-time types have <code>::static_value</code> field which returns compile-time raw time value (in corresponding units).</li>
+</ol>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Delay</h1>
+<ul>
+<li><em>Header</em>: <b><a class="el" href="delay_8h.html">void/delay.h</a></b></li>
+<li><em>Description</em>:<ol type="1">
+<li>Dumb blocking delay: <code>vd::delay_ns&lt;x&gt;()</code>, <code>vd::delay_us&lt;x&gt;()</code>, <code>vd::delay_ms&lt;x&gt;()</code>.</li>
+<li>Time type support: <code>vd::delay&lt;time_type_literal&gt;()</code>, <code>vd::delay(time_type);</code>.</li>
+</ol>
+</li>
+<li><em>Example</em>: &lt;details&gt;</li>
+</ul>
+<p>(Click to expand) </p>
+<div class="fragment"><div class="line">{c++}</div>
+<div class="line">   //Templated functions</div>
+<div class="line">   vd::delay_ms&lt;1000&gt;();</div>
+<div class="line">   vd::delay&lt;vd::seconds_l&lt;1&gt;&gt;();</div>
+</div><!-- fragment --><div class="fragment"><div class="line">{c++}</div>
+<div class="line">   //Pass time as argument</div>
+<div class="line">   vd::delay(vd::milli(1000));</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<ul>
+<li><em>Comment</em>:<ol type="1">
+<li>Better to use templated functions in case of good compiler optimization.</li>
+</ol>
+<ol type="1">
+<li>Pass time as argument only if you have compile-time unknown delay duration.</li>
+</ol>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Interrupts</h1>
+<ul>
+<li><em>Header</em>: **void\interrupt.h**</li>
+<li><em>Description</em>:<ol type="1">
+<li>Interrupt routine macro for architecture-independent interrupt handlers: <code>VOID_ISR(x){}</code>.</li>
+</ol>
+<ol type="1">
+<li>Interrupt control: <code><a class="el" href="group__atomic.html#ga44affb9768dc895de013a704164bc202" title="Disable all interrupts.">vd::DisableInterrupts()</a></code> and <code><a class="el" href="group__atomic.html#ga6993abda398ecf281f7f5fd4fded27ae" title="Enable all interrupts.">vd::EnableInterrupts()</a></code></li>
+</ol>
+<ol type="1">
+<li>Blocks with disabled interrupts: <code><a class="el" href="group__atomic.html#ga883e5b41fb351ac9cde32d75fc7be68f" title="Atomic block - all code inside this macro will be executed with disabled interrupts.">ATOMIC_BLOCK(RESTORE_STATE)</a> {&lt;code&gt;}</code> - disable interrupts in block and restore interrupt state (RESTORE_STATE is arg by default, you can omit it) <code><a class="el" href="group__atomic.html#ga883e5b41fb351ac9cde32d75fc7be68f" title="Atomic block - all code inside this macro will be executed with disabled interrupts.">ATOMIC_BLOCK(FORCE_ON)</a> {&lt;code&gt;}</code> - disable interrupts in block and force enable interrupts on exit</li>
+</ol>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Assertion</h1>
+<ul>
+<li><em>Header</em>: <b><a class="el" href="assert_8h_source.html">void/assert.h</a></b></li>
+<li><em>Description</em>:<ol type="1">
+<li>Assert implementation <code>assert(bool);</code>. Call <code>printf</code> and <code>abort()</code> on fail.</li>
+<li>Assert checking is persist only in <b>Debug</b> mode (macro <code>_DEBUG</code> defined).</li>
+<li>Define macro <code>VOID_RELEASE_ASSERT</code> to keep assert checking in <b>Release</b> mode.</li>
+<li>Define macro <code>VOID_ASSERT_TRAP</code> to trap assert by user-defined function <code>_void_assert_trap(char* filename, int line)</code>. (Setup custom action on failed condition)</li>
+<li>(Unity Support): define macro <code>_UNITY</code> globally for all project. If macro defined, <code>assert</code> will register assert in Unity system on fail. Requirements: 5.1. Unity header with path &lt;unity/unity_fixture.h&gt; must exist. 5.2. <code>void UnitySetAssertStatus(char status, const char* inFile, UNITY_LINE_TYPE atLine)</code> function must exist;</li>
+</ol>
+</li>
+<li><em>Example</em>: &lt;details&gt;</li>
+</ul>
+<p>(Click to expand): </p>
+<div class="fragment"><div class="line">{c++}</div>
+<div class="line">   int a = 1;</div>
+<div class="line">   assert(a==1); //pass</div>
+<div class="line">   assert(a==0); //fail</div>
+</div><!-- fragment --><p>&lt;/details&gt;</p>
+<ul>
+<li><em>Comment</em>:<ol type="1">
+<li>When no define <code>_DEBUG</code> exist all assert checking is removed (except for <code>VOID_RELEASE_ASSERT</code> define).</li>
+</ol>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Static Assertion</h1>
+<ul>
+<li><em>Header</em>: <b><a class="el" href="static__assert_8h_source.html">void/static_assert.h</a></b></li>
+<li><em>Description</em>: Assert checking in compile-time. Can be used outside of functions, and inside struct </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

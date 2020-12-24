@@ -7,4 +7,4 @@ target_link_libraries(tests PRIVATE void-win32 project_options project_warnings)
 target_link_libraries(tests PRIVATE unity)
 
 SET(DOXY_INPUT ${PROJECT_SOURCE_DIR}/src)
-ADD_DOCUMENTATION(doc doxygen/Doxyfile)
+ADD_DOCUMENTATION(doc doc/Doxyfile)

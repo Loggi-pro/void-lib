@@ -30,7 +30,6 @@ MACRO(ADD_DOCUMENTATION TARGET DOXYGEN_CONFIG_FILE)
     set(doxygen_outdir ${PROJECT_SOURCE_DIR}/${doxygen_outdir})
     ADD_CUSTOM_TARGET(${TARGET}
             COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doxy-${TARGET}.conf
-            COMMAND moxygen --pages --anchors --output=${doxygen_outdir}/../docs/api.md ${doxygen_outdir}/xml
             )
   ELSE(DOXYGEN_FOUND)
     MESSAGE(STATUS "Doxygen not found. Documentation will not be generated")
