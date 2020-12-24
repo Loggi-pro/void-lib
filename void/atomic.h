@@ -12,12 +12,12 @@
 namespace vd {
 	//! \ingroup atomic
 	//! \brief Atomic guard type (RAII). On create will block any interrupts. On destroy  - behaviour is defined by Argument policy.
-	template <ON_EXIT Type = ON_EXIT::RESTORE_STATE>
-	using atomic_guard_t = vd::Private::atomic_guard_t<Type>;
-
 	//! \ingroup atomic
 	//! \brief atomic_guard_t policy = RESTORE_STATE - restore interrupt states back on exit | FORCE_ON - enable interrupts on exit
 	using ON_EXIT = vd::Private::ON_EXIT;
+	template <ON_EXIT Type = ON_EXIT::RESTORE_STATE>
+	using atomic_guard_t = vd::Private::atomic_guard_t<Type>;
+
 	//! \ingroup atomic
 	//! \brief Non-Atomic Policy -  can be used in class to change behaviour (atomic/non atomic). Contain mock atomic functions.
 	using VoidAtomicPolicy = vd::Private::VoidAtomicPolicy;
