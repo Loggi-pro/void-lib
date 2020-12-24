@@ -3,3 +3,4 @@ bin/
 build*/
 copy.bat
 doc/xml/
+.idea/workspace.xml
