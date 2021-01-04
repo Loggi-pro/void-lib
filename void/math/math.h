@@ -192,18 +192,19 @@ namespace vd {
 	}
 
 	template<bool Signed> struct AbsHelper {
-		template<class T> static T Abs(T value) {return value >= T(0) ? value : -value;}
+		template<class T>
+		constexpr static T Abs(T value) {return value >= T(0) ? value : -value;}
 	};
 	template<> struct AbsHelper<false> {
-		template<class T> static T Abs(T value) {return value;}
+		template<class T> constexpr static T Abs(T value) {return value;}
 	};
 
 	namespace Private {
 		template<typename T>
-		using notIsFloating = vd::enable_if_t<vd::is_integral_v<T>>;
+		using IsInteger = vd::enable_if_t<vd::is_integral_v<T>>;
 	}
-	template<class T, typename = Private::notIsFloating<T>>
-	T Abs(T a) {
+	template<class T, typename = Private::IsInteger<T>>
+	constexpr T Abs(T a) {
 		return AbsHelper< vd::numeric_limits<T>::is_signed>::Abs(a);
 	}
 	#ifndef _WIN32
@@ -255,7 +256,7 @@ namespace vd {
 		return result;
 	}
 
-	inline int32_t sqrt(int32_t value) {
+	inline uint32_t sqrt(int32_t value) {
 		return sqrt((uint32_t)value);
 	}
 

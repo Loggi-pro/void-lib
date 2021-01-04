@@ -47,7 +47,7 @@ namespace vd
 		res.rem = uint8_t(n - ((res.quot << 1) + (qq & ~((T)7))));
 		if(res.rem > 9)
 		{
-			res.rem -= 10;
+			res.rem = static_cast<uint8_t>(res.rem-10);
 			res.quot++;
 		}
 		return res;

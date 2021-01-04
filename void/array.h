@@ -6,9 +6,9 @@
 namespace vd {
 	template < typename T, size_t SIZE>
 	class Array {
-			T data[SIZE] = {0};
+			T data[SIZE] = {T{}};
 		public:
-			using index_t = vd::uintx_t<SIZE>;
+			using index_t = vd::uintx_t<(uint32_t)SIZE>;
 			using data_t  = T;
 			constexpr Array() = default;
 			constexpr explicit Array(std::initializer_list<T> l) {

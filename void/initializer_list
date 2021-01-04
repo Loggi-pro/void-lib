@@ -1,9 +1,10 @@
 // std::initializer_list support -*- C++ -*-
 #pragma once
 
-#ifdef VOID_COMPILER_MSVC
+#ifdef WIN32
 #include <initializer_list>
-#elif defined (VOID_COMPILER_GCC)
+#else
+#if  defined (VOID_COMPILER_GCC)
  //#include <bits/c++config.h>
 #pragma GCC system_header
 #pragma GCC visibility push(default)
@@ -66,4 +67,5 @@ namespace std
     { return __ils.end(); }
 }
 #pragma GCC visibility pop
+#endif
 #endif
